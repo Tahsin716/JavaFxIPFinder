@@ -1,5 +1,7 @@
 package ip_finder;
 
+import javafx.scene.control.Alert;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -28,7 +30,11 @@ public class Model {
 
     public void showDialog(String result) {
 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("IP Finder");
+        alert.setContentText(result);
 
+        alert.showAndWait();
 
     }
 
