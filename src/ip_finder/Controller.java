@@ -9,9 +9,20 @@ public class Controller {
     @FXML
     private TextField input;
 
+    //Instance of the Model class
+    Model model = new Model();
+
+    //Temporary String to hold the url
+    String temp;
+
+
+    /*
+    * On button click
+    */
 
     @FXML
     private void onClick(ActionEvent event) {
-
+        temp = input.getText();
+        model.getIP(temp);
     }
 }

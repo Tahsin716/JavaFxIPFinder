@@ -16,9 +16,10 @@ public class Model {
         try {
             InetAddress inetAddress = InetAddress.getByName(url);
             String ip = inetAddress.getHostAddress();
+            showDialog(ip);
         }
         catch (UnknownHostException e) {
-
+            showDialog("Something wrong with web address provided!");
         }
     }
 
@@ -28,10 +29,11 @@ public class Model {
     * Displays the IP address on a dialog box
     */
 
-    public void showDialog(String result) {
+    private void showDialog(String result) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("IP Finder");
+        alert.setHeaderText(null);
         alert.setContentText(result);
 
         alert.showAndWait();
